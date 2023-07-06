@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'tt_firs_neuebold';
+  src: local('TT Firs Neue Bold'), local('TT-Firs-Neue-Bold'),
+       url('../fonts/ttfirsneuebold.woff2') format('woff2'),
+       url('../fonts/ttfirsneuebold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'tt_firs_neueregular';
+  src: local('TT Firs Neue Regular'), local('TT-Firs-Neue-Regular'),
+       url('../fonts/ttfirsneueregular.woff2') format('woff2'),
+       url('../fonts/ttfirsneueregular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'robotobold';
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+       url('../fonts/robotobold.woff2') format('woff2'),
+       url('../fonts/robotobold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'robotoregular';
+  src: local('Roboto Regular'), local('Roboto-Regular'),
+       url('../fonts/robotoregular.woff2') format('woff2'),
+       url('../fonts/robotoregular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

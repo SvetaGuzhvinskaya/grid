@@ -1,0 +1,128 @@
+@import "mixins"; 
+.header {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  padding-top: 24px;
+  padding-bottom: 26px;
+  width: 100%;
+  background-color: $color-black;
+  z-index: 10;
+}
+
+.main-nav {
+  font-family: $font-family-neue400;
+  font-size: 16px;
+  line-height: 21px;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    text-align: center;
+    margin-left: -5px;
+  }
+  &__link {
+    display: block;
+    padding: 0 5px;
+    color: $color-white;
+    text-decoration: none;
+    @include transition;
+    &:hover {
+      color: $color-orange;
+    }
+    &:focus {
+      background-color: $color-orange-hover;
+      color: $color-white;
+      
+    }
+    &:active {
+      color: $color-orange-active;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .header {
+    padding-top: 25px;
+    padding-bottom: 27px;
+  }
+}
+
+@media (max-width: $sm) {
+  .header {
+    padding-top: 25px;
+    padding-bottom: 27px;
+    .container {
+      max-width: none;
+    }
+  }
+}
+
+@media (max-width: $xxs) {
+  .header {
+    padding-top: 22px;
+    padding-bottom: 23px;
+  }
+  .main-nav {
+    &__btn-menu {
+      display: flex;
+      flex-direction: column;
+      padding: 6px 0 0;
+      width: 20px;
+      height: 18px;
+      border-top: 2px solid $color-white;
+      cursor: pointer;
+      &:before,
+      &:after {
+        display: block;
+        height: 2px;
+        background-color: $color-white;
+        content: '';
+      }
+      &:after {
+        margin-top: auto;
+        width: 10px;
+      }
+    }
+    &__over {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      display: flex;
+      flex-direction: column;
+      padding: 14px 21px 33px;
+      width: 100%;
+      height: calc(100vh - 70px);
+      background-color: $color-black;
+      transition: all .3s ease-out;
+      &.is-open {
+        left: 0;
+      }
+    }
+    &__list {
+      display: block;
+    }
+    &__item {
+      text-align: left;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+    &__link {
+      display: inline-block;
+    }
+    &__btn-close {
+      margin-bottom: 15px;
+      width: 18px;
+      height: 18px;
+      &::before,
+      &::after{
+        height: 11px;
+      }
+    }
+    &__link-phone {
+      margin-top: auto;
+    }
+  }
+}

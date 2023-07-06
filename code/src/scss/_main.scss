@@ -1,0 +1,530 @@
+@import "mixins"; 
+.main {
+  position: relative;
+  padding-top: 80px;
+  min-height: calc(100vh - 186px);
+  z-index: 1;
+} 
+
+.section {
+  scroll-margin-top: 80px;
+}
+
+.section-hero {
+  padding: 40px 0 68px;
+  &__img {
+    display: block;
+  }
+  &__title {
+    position: relative;
+    margin-bottom: 18px;
+    word-spacing: -2px;
+    white-space: nowrap;
+  }
+}
+
+.post-img {
+  position: relative;
+  &--bg {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &-master {
+      background-image: url('../images/img01.jpg'); 
+    }
+    &-about {
+      background-image: url('../images/img05.jpg');
+    }
+    &-fuji {
+      background-image: url('../images/img09.jpg');
+    }
+    &-zabvenie {
+      background-image: url('../images/img10.jpg');
+    }
+  }
+  &__label {
+    @include label(15px, 15px, 7px 15px);
+    &--sm {
+      @include label(7px, 7px, 6px 14px);
+    }
+  }
+  &__img {
+    display: block;
+    &--mb {
+      margin-bottom: 18px;
+    }
+  }
+  &__entry {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 59px;
+    width: 100%;
+    color: $color-white;
+    z-index: 10;
+    &--sm {
+      top: 0;
+      padding: 20px 30px 30px;
+      max-width: 350px;
+    } 
+    .btn {
+      margin-top: auto;
+      margin-right: auto;
+    }
+  }
+  &__autor {
+    margin-bottom: 2px;
+    font-size: 16px;
+    line-height: 19px;
+    color: $color-white;
+  }
+  &__title {
+    margin-bottom: 20px;
+    font-family: $font-family-neue700;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 37px;
+  }
+  &__sub-title {
+    margin-bottom: 6px;
+    font-family: $font-family-neue700;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 24px;
+  }
+  &__description {
+    margin-bottom: 7px;
+    font-size: 16px;
+    line-height: 22px;
+    &--xs,
+    &--md {
+      max-height: 66px;
+      overflow: hidden;
+    }
+  }
+  &__date {
+    @include date (999, #999); 
+    &--white{
+      @include date (fff, #fff);
+    }
+  }
+}
+
+.section-about {
+  padding: 32px 0 71px;
+  background-color: $color-black;
+  color: $color-white;
+  &__img {
+    display: block;
+  }
+}
+
+.newsletter {
+  &__title {
+    margin-bottom: 17px;
+  }
+  &__row {
+    display: flex;
+  }
+  &__control {
+    margin-right: 30px;
+  }
+}
+
+.section-projects {
+  padding: 70px 0 35px;
+  &__title {
+    margin-bottom: 15px;
+  }
+}
+
+.section-contacts {
+  padding: 34px 0 69px;
+  &__title {
+    margin-bottom: 25px;
+  }
+  &__description {
+    margin-bottom: 14px;
+    line-height: 22px;
+    color: $color-grey-99;
+  }
+}
+
+.map {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  &__btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  &__entry {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px 60px 39px;
+    width: calc(50% - 15px);
+    height: 100%;
+    background-color: rgba(32, 32, 32, 0.85);
+    color: $color-white;
+  }
+  &__sub-title {
+    margin-bottom: 6px;
+  }
+  &__description {
+    font-size: 18px;
+    line-height: 28px;
+    color: $color-grey-ca;
+  }
+  &__link-phone {
+    display: flex;
+    align-items: center;
+  }
+  &__map {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: $lg) {
+  .section-hero {
+    &__title {
+      margin-bottom: 27px;
+      white-space: normal;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .section-hero {
+    &__title {
+      margin-bottom: 27px;
+      white-space: normal;
+    }
+  }
+  .post-img {
+    &--bg {
+      &-master {
+        background-image: url('../images/img01-1024.jpg'); 
+      }
+      &-about {
+        background-image: url('../images/img05-1024.jpg');
+      }
+      &-fuji {
+        background-image: url('../images/img09-1024.jpg');
+      }
+      &-zabvenie {
+        background-image: url('../images/img10-1024.jpg');
+      }
+    }
+    &__entry {
+      padding: 27px 28px 30px;
+    }
+    &__autor {
+      margin-bottom: 8px;
+    }
+    &__title {
+      margin-bottom: 24px;
+      font-size: 34px;
+      line-height: 34px;
+    }
+    &__description {
+      margin-bottom: 14px;
+      &--xs {
+        margin-bottom: 8px;
+        max-height: none;
+        height: 50px;
+        overflow: hidden;
+      }
+    }
+  }
+  .section-about {
+    padding-top: 33px;
+    padding-bottom: 81px;
+  }
+  .newsletter {
+    &__row {
+      display: block;
+    }
+    &__control {
+      margin-right: 0;
+      margin-bottom: 20px;
+      width: 342px;
+    }
+  }
+  .section-contacts {
+    padding-top: 35px;
+  }
+  .map {
+    width: 100%;
+    &__entry {
+      top: auto;
+      bottom: 0;
+      padding: 24px 30px 14px;
+      width: 100%;
+      height: auto;
+    }
+    &__description {
+      width: 65%;
+      font-size: 16px;
+    }
+    &__link-phone {
+      margin-left: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      white-space: nowrap;
+      &:before {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translate(0, -2px);
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .map {
+    &__description {
+      width: auto;
+    }
+    &__link-phone {
+      display: flex;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .hidden-sm{
+    display: none;
+  }
+  .main {
+    padding-top: 125px;
+  } 
+  .section {
+    scroll-margin-top: 125px;
+  }
+  .section-hero {
+    padding-top: 36px;
+    &__title {
+      margin-top: -2px;
+      margin-bottom: 18px;
+      font-size: 22px;
+      line-height: 23px;
+      letter-spacing: -1px;
+    }
+  }
+  .section-about {
+    padding-bottom: 65px;
+  }
+  .section-projects {
+    padding-top: 71px;
+  }
+  .post-img {
+    &--bg {
+      &-master {
+        background-image: url('../images/img01-768.jpg');
+      }
+      &-about {
+        background-image: url('../images/img05-768.jpg');
+      }
+      &-fuji {
+        background-image: url('../images/img09-768.jpg');
+      }
+      &-zabvenie {
+        background-image: url('../images/img10-768.jpg');
+      }
+    }
+    &__entry {
+      &--sm {
+        padding-top: 33px;
+      }
+    }
+    &__autor {
+      margin-bottom: 14px;
+    }
+    &__title {
+      line-height: 31px;
+    }
+    &__description {
+      margin-bottom: 20px;
+      &--xs {
+        margin-bottom: 12px;
+        height: 66px;
+      }
+    }
+    &__date {
+      line-height: 14px;
+      &--white {
+        margin-bottom: 6px;
+      }
+      &--xs {
+        line-height: 18px;
+      }
+    }
+  }
+  .newsletter {
+    &__control {
+      width: 100%;
+    }
+  }
+  .section-contacts {
+    padding-top: 36px;
+  }
+  .map {
+    height: 460px;
+    &__entry {
+      padding: 22px 30px 17px;
+    }
+    &__description {
+      width: 65%;
+    }
+    &__link-phone {
+      display: flex;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: $xxs) {
+  .main {
+    padding-top: 115px;
+  } 
+  .section {
+    scroll-margin-top: 115px;
+  }
+  .section-hero {
+    padding: 30px 0 51px;
+    &__title {
+      margin: 3px 0 16px;
+      font-size: 18px;
+      line-height: 19px;
+    }
+    img {
+      margin: 0 auto;
+    }
+  }
+  .section-about {
+    padding: 31px 0 60px;
+  }
+  .section-projects {
+    padding: 50px 0 14px;
+    &__title {
+      margin-bottom: 17px;
+    }
+  }
+  .section-contacts {
+    padding: 19px 0 50px;
+    &__title {
+      margin-bottom: 15px;
+    }
+    &__description {
+      margin-bottom: 17px;
+      line-height: 18px;
+    }
+  }
+  .post-img {
+    &--bg {
+      &-master {
+        background-image: url('../images/img01-320.jpg');
+      }
+      &-about {
+        background-image: url('../images/img05-320.jpg');
+      }
+      &-fuji {
+        background-image: url('../images/img09-320.jpg');
+      }
+      &-zabvenie {
+        background-image: url('../images/img10-320.jpg');
+      }
+    }
+    &__entry {
+      padding-right: 40px;
+      .btn {
+        margin-top: 0;
+      }
+    }
+    &__label {
+      top: 6px;
+      right: 5px;
+      padding: 4px 14px;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      &--sm {
+        top: 5px;
+        right: 5px;
+      }
+    }
+    &__autor {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    &__title {
+      margin-bottom: 14px;
+      font-size: 24px;
+      line-height: 26px;
+    }
+    &__sub-title {
+      margin-bottom: 9px;
+    }
+    &__img {
+      &--mb {
+        margin-bottom: 17px;
+      }
+    }
+    &__description {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 18px;
+      &--xs,
+      &--md {
+        margin-bottom: 10px;
+        height: auto;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+    &__date {
+      line-height: 22px;
+      &--white {
+        margin-top: auto;
+        margin-bottom: 8px;
+      }
+    }
+  }
+  .newsletter {
+    &__title {
+      margin-bottom: 15px;
+    }
+  }
+  .map {
+    margin: 0 -21px;
+    width: calc(100% + 42px);
+    height: 472px;
+    &__entry {
+      padding: 23px 19px 10px;
+    }
+    &__sub-title {
+      margin-bottom: 10px;
+    }
+    &__description {
+      margin-bottom: 0;
+      width: auto;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    &__link-phone {
+      margin-top: 8px;
+    }
+  }
+}
