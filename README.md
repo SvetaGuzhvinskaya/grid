@@ -1,4 +1,4 @@
-# grid
+# High Pass
 Адаптивная верстка фотостудии High Pass с подключением плагинов:
 <ul>
 <li>just-validate.js</li>
@@ -13,6 +13,7 @@
 </ul>
 <h2>Сборка проекта</h2>
 <p>Для сборки используется <a hfef="https://github.com/gulpjs/gulp" target="_blank">Gulp</a></p>
+<p>Исходные файлы для сборки находятся в папке "code"</p>
 <p>Перед началом работы необходимо установить зависимости из npm:</p>
 <pre>
   <code>npm i</code>
